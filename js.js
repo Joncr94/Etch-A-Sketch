@@ -19,6 +19,7 @@ function placeSquares(size) {
     for (let i = 0; i < amount; i++){
         let square = document.createElement("div");
         square.style.backgroundColor = "blue";
+        square.style.border = "2px solid";
         board.insertAdjacentElement("beforeend", square);
         
         
