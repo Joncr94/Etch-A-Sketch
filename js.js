@@ -10,6 +10,7 @@ let darken = false;
 
 function placeSquares(size) {
     let board = document.querySelector(".board");
+    
     let squares = document.querySelectorAll('.board div');
     squares.forEach((div)  => div.remove());
     board.style.gridTemplateColumns  = `repeat(${size} , 1fr)`;
@@ -20,11 +21,8 @@ function placeSquares(size) {
         square.style.backgroundColor = "blue";
         board.insertAdjacentElement("beforeend", square);
         
-        normalColor.addEventListener("click",  () => {
-            darken = false;
-        })
         
-        let effect =  dark.addEventListener("click",  () => {
+        dark.addEventListener("click",  () => {
             darken = true
             if (darken === true) {
             square.addEventListener ("mouseover", () => {
@@ -33,7 +31,7 @@ function placeSquares(size) {
                     if (currentBrightness >= 0 ) {
                         square.style.filter = `brightness(${currentBrightness}%)`;
                         orange.style.brightness = currentBrightness;   
-                        console.log(effect)
+                
             }
         })
     }
